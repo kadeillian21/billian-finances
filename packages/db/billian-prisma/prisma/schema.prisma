@@ -7,18 +7,18 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgres://kade:m0fyYnAQDq1R@ep-late-mountain-30370464.us-west-2.aws.neon.tech/neondb"
 }
 
 model CostOfLiving {
-  id                 String @id @default(cuid())
-  user_id            String
-  rent               Int?
-  mortgage           Int?
-  home_insurance     Int?
+  id                  String @id @default(cuid())
+  user_id             String
+  rent                Int?
+  mortgage            Int?
+  home_insurance      Int?
   vehicle_maintenance Int?
-  car_insurance Int?
-  phone_bill Int?
-  gym_bill Int?
-  food Int?
+  car_insurance       Int?
+  phone_bill          Int?
+  gym_bill            Int?
+  food                Int?
 }
