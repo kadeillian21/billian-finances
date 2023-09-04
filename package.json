@@ -13,5 +13,6 @@
     "turbo": "latest"
   },
   "packageManager": "pnpm@8.6.10",
-  "name": "billian-finances"
+  "name": "billian-finances",
+  "dependencies": {}
 }
