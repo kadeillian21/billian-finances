@@ -166,14 +166,6 @@ export default function Home() {
                         <dt className="text-gray-500">Amount</dt>
                         <dd className="flex items-start gap-x-2">
                           <div className="font-medium text-gray-900">{client.lastInvoice.amount}</div>
-                          <div
-                            className={classNames(
-                              statuses[client.lastInvoice.status],
-                              'rounded-md py-1 px-2 text-xs font-medium ring-1 ring-inset'
-                            )}
-                          >
-                            {client.lastInvoice.status}
-                          </div>
                         </dd>
                       </div>
                     </dl>
