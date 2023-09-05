@@ -19,5 +19,11 @@
       "inputs": ["prisma/schema.prisma"],
       "cache": false
     }
-  }
+  },
+  "globalEnv": [
+    "BILLIAN_NEON_URL",
+    "NEXT_ENVIRONMENT",
+    "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY",
+    "CLERK_SECRET_KEY"
+  ]
 }
