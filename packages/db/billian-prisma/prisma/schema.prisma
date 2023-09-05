@@ -12,13 +12,13 @@ datasource db {
 
 model CostOfLiving {
   id                  String @id @default(cuid())
-  user_id             String
+  UserId             String
   rent                Int?
   mortgage            Int?
-  home_insurance      Int?
-  vehicle_maintenance Int?
-  car_insurance       Int?
-  phone_bill          Int?
-  gym_bill            Int?
+  homeInsurance      Int?
+  vehicleMaintenance Int?
+  carInsurance       Int?
+  phoneBill          Int?
+  gymBill            Int?
   food                Int?
 }
