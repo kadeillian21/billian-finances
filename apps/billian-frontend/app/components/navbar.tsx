@@ -1,8 +1,14 @@
 "use client"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHamburger, faX } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faX } from '@fortawesome/free-solid-svg-icons'
 import { Dialog } from '@headlessui/react'
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/nextjs"
 import React from "react"
 import Image from 'next/image'
 
@@ -22,7 +28,7 @@ export default function Navbar() {
           <div className="flex flex-1 items-center gap-x-6">
             <button type="button" className="-m-3 p-3 md:hidden" onClick={() => setMobileMenuOpen(true)}>
               <span className="sr-only">Open main menu</span>
-              <FontAwesomeIcon icon={faHamburger} className="h-5 w-5 text-gray-900" aria-hidden="true" />
+              <FontAwesomeIcon icon={faBars} className="h-5 w-5 text-gray-900" aria-hidden="true" />
             </button>
           </div>
           <nav className="hidden md:flex md:gap-x-11 md:text-sm md:font-semibold md:leading-6 md:text-gray-700">
@@ -32,18 +38,6 @@ export default function Navbar() {
               </a>
             ))}
           </nav>
-          <div className="flex flex-1 items-center justify-end gap-x-8">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your profile</span>
-              <Image
-                className="h-8 w-8 rounded-full bg-gray-800"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt=""
-                height={20}
-                width={20}
-              />
-            </a>
-          </div>
         </div>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
           <div className="fixed inset-0 z-50" />
@@ -79,6 +73,20 @@ export default function Navbar() {
             </div>
           </Dialog.Panel>
         </Dialog>
+        <div className="flex flex-1 items-center justify-end gap-x-8">
+        <SignedIn>
+          <div className="mr-5">
+            {/* @ts-ignore */}
+            <UserButton className="bg-blue-500 text-white px-3 py-1 rounded-lg"/>
+          </div>
+        </SignedIn>
+        <SignedOut>
+          <div className="mr-5">
+            {/* @ts-ignore */}
+            <SignInButton className="bg-blue-500 text-white px-3 py-1 rounded-lg" />
+          </div>
+        </SignedOut>
+      </div>
       </header>
   )
 }

@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgres://kade:m0fyYnAQDq1R@ep-late-mountain-30370464.us-west-2.aws.neon.tech/neondb"
+  url      = env("DATABASE_URL")
 }
 
 model CostOfLiving {
