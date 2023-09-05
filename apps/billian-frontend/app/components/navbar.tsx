@@ -10,10 +10,10 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
 
   const navigation = [
-    { name: 'Home', href: '#' },
+    { name: 'Home', href: '/' },
     { name: 'Cost of Living', href: '/cost-of-living' },
-    { name: 'Clients', href: '#' },
-    { name: 'Expenses', href: '#' },
+    { name: 'Investments', href: '/investments' },
+    { name: 'Housing', href: '/housing' },
   ]
 
   return (
