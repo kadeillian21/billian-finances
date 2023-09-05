@@ -14,7 +14,8 @@
     "with-env": "dotenv -e ../../../.env --"
   },
   "dependencies": {
-    "@prisma/client": "^5.2.0"
+    "@prisma/client": "^5.2.0",
+    "@billian/env": "^0.1.0"
   },
   "devDependencies": {
     "dotenv-cli": "^7.2.1",
