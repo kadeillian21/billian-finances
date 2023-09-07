@@ -18,12 +18,17 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-turbo": "^1.10.7",
     "eslint-plugin-react": "7.32.2",
-    "next": "^13.4.19",
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@billian/eslint-config": "^0.2.0",
     "eslint": "^8.45.0",
-    "eslint-config-custom": "^0.0.0",
     "typescript": "^5.1.6"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@billian/eslint-config/base"
+    ]
   }
 }

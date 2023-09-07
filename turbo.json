@@ -18,6 +18,12 @@
     "db:push": {
       "inputs": ["prisma/schema.prisma"],
       "cache": false
+    },
+    "clean": {
+      "cache": false
+    },
+    "//#clean": {
+      "cache": false
     }
   },
   "globalEnv": [

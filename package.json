@@ -16,6 +16,9 @@
   "packageManager": "pnpm@8.6.10",
   "name": "billian-finances",
   "dependencies": {
-    "@clerk/nextjs": "^4.23.4"
+    "@billian/env": "workspace:*",
+    "@billian/eslint-config": "workspace:*",
+    "@clerk/nextjs": "^4.23.4",
+    "next": "13.4.19"
   }
 }
