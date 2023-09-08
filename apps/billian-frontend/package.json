@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "pnpm next build",
+    "clean": "git clean -xdf .next .turbo node_modules",
+    "dev": "pnpm with-env next dev",
+    "lint": "dotenv -v SKIP_ENV_VALIDATION=1 next lint",
+    "lint:fix": "pnpm lint --fix",
+    "start": "pnpm with-env next start",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -18,6 +21,8 @@
     "@types/react-dom": "^18.2.0",
     "autoprefixer": "10.4.15",
     "billian-prisma": "workspace:*",
+    "dotenv": "^16.3.1",
+    "@t3-oss/env-nextjs": "^0.6.0",
     "eslint": "^8.48.0",
     "eslint-config-next": "13.4.19",
     "next": "13.4.19",

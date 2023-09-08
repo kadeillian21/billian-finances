@@ -22,9 +22,11 @@ export default function RootLayout({
         <head>
           <link rel="icon" href="/favicon.ico" />
         </head>
-        <body className={inter.className}>
-          <Navbar />
-          <main>{children}</main>
+        <body className="bg-gray_blue-9">
+          <div className={inter.className}>
+            <Navbar />
+            <main className="pt-16 min-h-screen">{children}</main>
+          </div>
         </body>
       </html>
     </ClerkProvider>

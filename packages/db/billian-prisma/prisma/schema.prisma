@@ -7,18 +7,133 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("BILLIAN_NEON_URL")
 }
 
 model CostOfLiving {
-  id                  String @id @default(cuid())
-  user_id             String
-  rent                Int?
-  mortgage            Int?
-  home_insurance      Int?
-  vehicle_maintenance Int?
-  car_insurance       Int?
-  phone_bill          Int?
-  gym_bill            Int?
-  food                Int?
+  id                 String               @id @default(cuid())
+  housing            Housing[]            @relation("CostOfLivingHousing")
+  food               Food[]               @relation("CostOfLivingFoods")
+  subscriptions      Subscription[]       @relation("CostOfLivingSubscriptions")
+  miscellaneousCosts MiscellaneousCosts[] @relation("CostOfLivingMiscellaneousCosts")
+  healthCare         HealthCare?          @relation("CostOfLivingHealthCare")
+  transportation     Transportation?      @relation("CostOfLivingTransportation")
+  transportationId   String?
+}
+
+model Loan {
+  id                    String     @id @default(cuid())
+  name                  String
+  description           String?
+  loanPeriod            Int
+  loanStartDate         DateTime
+  interestRate          Float
+  principal             Float
+  downPayment           Float
+  totalInterestToBePaid Float
+  typeOfLoan            TypeOfLoan
+  createdAt             DateTime   @default(now())
+  updatedAt             DateTime?
+  mortgage              Mortgage?  @relation("MortgageLoans", fields: [mortgageId], references: [id])
+  mortgageId            String?
+  carLoan               Car?       @relation("CarLoans", fields: [carLoanId], references: [id])
+  carLoanId             String?
+}
+
+model Subscription {
+  id             String       @id @default(cuid())
+  name           String
+  cost           String
+  renewsOn       DateTime
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime?
+  costOfLivingId String
+  costOfLiving   CostOfLiving @relation("CostOfLivingSubscriptions", fields: [costOfLivingId], references: [id])
+}
+
+enum TypeOfLoan {
+  MORTGAGE
+  CAR_LOAN
+  STUDENT_LOAN
+  BUSINESS_LOAN
+  MISCELLANEOUS_VEHICLE_LOAN
+}
+
+model Food {
+  id             String       @id @default(cuid())
+  name           String
+  cost           Float
+  costOfLivingId String
+  costOfLiving   CostOfLiving @relation("CostOfLivingFoods", fields: [costOfLivingId], references: [id])
+}
+
+model Housing {
+  id             String       @id @default(cuid())
+  rent           Rent?        @relation("HousingToRent")
+  rentId         String?
+  mortgage       Mortgage?    @relation("HousingToMortgage")
+  mortgageId     String?
+  costOfLivingId String
+  costOfLiving   CostOfLiving @relation("CostOfLivingHousing", fields: [costOfLivingId], references: [id])
+}
+
+model Rent {
+  id               String    @id @default(cuid())
+  cost             Float
+  utilities        Float?
+  rentersInsurance Float?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime?
+  housing          Housing   @relation("HousingToRent", fields: [housingId], references: [id])
+  housingId        String    @unique
+}
+
+model Mortgage {
+  id                 String    @id @default(cuid())
+  propertyTax        Float
+  homeOwnerInsurance Float?
+  hoaFees            Float?
+  maitenance         Float?
+  mortgageStartedOn  DateTime
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime?
+  housing            Housing   @relation("HousingToMortgage", fields: [housingId], references: [id])
+  housingId          String    @unique
+  houseLoans         Loan[]    @relation("MortgageLoans")
+}
+
+model Transportation {
+  id             String       @id @default(cuid())
+  costOfLivingId String       @unique
+  costOfLiving   CostOfLiving @relation("CostOfLivingTransportation", fields: [costOfLivingId], references: [id])
+}
+
+model MiscellaneousTransportation {
+  id          String  @id @default(cuid())
+  cost        Float
+  description String?
+}
+
+model Car {
+  id             String @id @default(cuid())
+  gasCost        Float
+  maitenanceCost Float
+  carInsurance   Float
+  carLoans       Loan[] @relation("CarLoans")
+}
+
+model HealthCare {
+  id             String       @id @default(cuid())
+  cost           Float
+  costOfLivingId String       @unique
+  costOfLiving   CostOfLiving @relation("CostOfLivingHealthCare", fields: [costOfLivingId], references: [id])
+}
+
+model MiscellaneousCosts {
+  id             String       @id @default(cuid())
+  name           String
+  description    String?
+  cost           String
+  costOfLivingId String
+  costOfLiving   CostOfLiving @relation("CostOfLivingMiscellaneousCosts", fields: [costOfLivingId], references: [id])
 }
