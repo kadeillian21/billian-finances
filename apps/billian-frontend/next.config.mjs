@@ -1,5 +1,4 @@
-import {PrismaPlugin} from '@prisma/nextjs-monorepo-workaround-plugin'
-import {configEnv} from "../../packages/config/env/src/env.nextjs.mjs"
+import {configEnv} from "billian-prisma/node_modules/@billian/env/src/env.nextjs.mjs"
 
 const {serverConfig,publicConfig} = configEnv()
 
@@ -27,11 +26,11 @@ const config = {
   //   locales: ["en"],
   //   defaultLocale: "en",
   // },
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      config.plugins = [...config.plugins, new PrismaPlugin()]
-    }
-    return config
-  },
+  // webpack: (config, { isServer }) => {
+  //   if (isServer) {
+  //     config.plugins = [...config.plugins, new PrismaPlugin()]
+  //   }
+  //   return config
+  // },
 };
 export default config;
