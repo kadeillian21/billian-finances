@@ -10,6 +10,12 @@ datasource db {
   url      = env("BILLIAN_NEON_URL")
 }
 
+model UserProfile {
+  id           String        @id @default(cuid())
+  clerkUserId  String
+  costOfLiving CostOfLiving?
+}
+
 model CostOfLiving {
   id                 String               @id @default(cuid())
   housing            Housing[]            @relation("CostOfLivingHousing")
@@ -19,6 +25,8 @@ model CostOfLiving {
   healthCare         HealthCare?          @relation("CostOfLivingHealthCare")
   transportation     Transportation?      @relation("CostOfLivingTransportation")
   transportationId   String?
+  userProfileId String @unique
+  userProfile UserProfile @relation(fields: [userProfileId], references: [id])
 }
 
 model Loan {
