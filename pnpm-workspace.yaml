@@ -2,5 +2,5 @@ packages:
   - "apps/*"
   - "packages/*"
   - packages/db/*
-  - packages/service/*
+  - packages/services/*
   - packages/config/*
