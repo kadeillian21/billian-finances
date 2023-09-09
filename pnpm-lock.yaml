@@ -207,6 +207,25 @@ importers:
         specifier: ^5.1.6
         version: 5.2.2
 
+  packages/services/user-profile:
+    dependencies:
+      billian-prisma:
+        specifier: ^0.1.0
+        version: link:../../db/billian-prisma
+      next-connect:
+        specifier: 1.0.0-next.4
+        version: 1.0.0-next.4
+    devDependencies:
+      dotenv-cli:
+        specifier: ^7.2.1
+        version: 7.3.0
+      prisma:
+        specifier: ^5.2.0
+        version: 5.2.0
+      typescript:
+        specifier: ^5.1.6
+        version: 5.2.2
+
 packages:
 
   /@aashutoshrathi/word-wrap@1.2.6:
@@ -3648,6 +3667,14 @@ packages:
     resolution: {integrity: sha512-p7KTHxU0CUrcOXe62Zfrb5Z13nLvPhSWR/so3kFulUQU0sgUll2Z0LwpsLN351eOOD+hRGu/F1g+6xDfPeD++Q==}
     dev: false
 
+  /next-connect@1.0.0-next.4:
+    resolution: {integrity: sha512-Iwfz4BgKyiU1E7PeF+kY0d3Ntjr6ZZv6SlOpQokBjaa4YmWv4zEuf/v5txFcoXDF9fSSjdzSzOQ6C+dQEQxkwA==}
+    engines: {node: '>=16'}
+    dependencies:
+      '@tsconfig/node16': 1.0.4
+      regexparam: 2.0.1
+    dev: false
+
   /next@13.4.19(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-HuPSzzAbJ1T4BD8e0bs6B9C1kWQ6gv8ykZoRWs5AQoiIuqbGHHdQO7Ljuvg05Q0Z24E2ABozHe6FxDvI6HfyAw==}
     engines: {node: '>=16.8.0'}
@@ -4146,6 +4173,11 @@ packages:
       call-bind: 1.0.2
       define-properties: 1.2.0
       functions-have-names: 1.2.3
+    dev: false
+
+  /regexparam@2.0.1:
+    resolution: {integrity: sha512-zRgSaYemnNYxUv+/5SeoHI0eJIgTL/A2pUtXUPLHQxUldagouJ9p+K6IbIZ/JiQuCEv2E2B1O11SjVQy3aMCkw==}
+    engines: {node: '>=8'}
     dev: false
 
   /resolve-from@4.0.0:
