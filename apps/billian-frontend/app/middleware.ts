@@ -11,7 +11,7 @@ export default authMiddleware({
       return redirectToSignIn({ returnBackUrl: req.url });
     }
   },
-  publicRoutes: ["/api/(.*)", "/bcn-sign-in", "/bcn-sign-up", "/sign-in/","/sign-up/"],
+  publicRoutes: ["/api/(.*)", "/sign-in/","/sign-up/"],
 })
 
 export const config = {
