@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { createRouter } from 'next-connect'
 import  { type NextApiRequest, type NextApiResponse } from 'next'
@@ -9,7 +7,8 @@ import { type Prisma } from 'billian-prisma'
 const router = createRouter<NextApiRequest, NextApiResponse>()
 
 router.post('/api/user-profile/create', async (req, res) => {
-  const createUserProfileParams: Prisma.UserProfileUncheckedCreateInput = req.body
+  // eslint-disable-next-line @typescript-eslint/dot-notation, @typescript-eslint/no-unsafe-member-access
+  const createUserProfileParams: Prisma.UserProfileUncheckedCreateInput = req.body?.['data']?.['id']
   const createdUserProfile = await userProfileService.createUserProfile(createUserProfileParams)
   res.status(201).json(createdUserProfile)
 })
