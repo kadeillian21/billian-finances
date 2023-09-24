@@ -4,3 +4,4 @@ packages:
   - packages/db/*
   - packages/services/*
   - packages/config/*
+  - packages/api/*

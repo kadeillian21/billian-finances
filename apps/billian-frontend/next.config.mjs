@@ -14,6 +14,7 @@ const config = {
   images: {
     domains: ['tailwindui.com', 'images.unsplash.com']
   },
+  transpilePackages: ['ui']
   // eslint: { ignoreDuringBuilds: !!process.env.CI },
   // typescript: { ignoreBuildErrors: !!process.env.CI },
   /**

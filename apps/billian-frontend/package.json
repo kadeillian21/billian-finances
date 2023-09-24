@@ -12,12 +12,16 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@billian/col-service": "workspace:*",
     "@billian/user-profile-service": "workspace:*",
+    "@billian/trpc": "workspace:*",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@headlessui/react": "^1.7.17",
     "@t3-oss/env-nextjs": "^0.6.0",
+    "@trpc/client": "^10.34.0",
+    "@trpc/next": "^10.38.4",
     "@types/node": "^20.5.2",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
@@ -33,6 +37,7 @@
     "postcss": "8.4.29",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
+    "superjson": "1.12.4",
     "tailwindcss": "3.3.3",
     "typescript": "^4.5.2"
   }

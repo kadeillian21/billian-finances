@@ -1,1 +1,1 @@
-export { handler } from './src/user-profile.router'
+export { handler } from './src/user-profile.trpc'
