@@ -1,7 +1,5 @@
 "use client"
 import React from "react"
-import { CostOfLiving, billian_prisma } from "billian-prisma"
-import { colClient } from "@billian/col-service"
 
 const people = [
   { name: 'Lindsay Walton', monthlyCost: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
@@ -13,12 +11,7 @@ function classNames(...classes: string[]) {
 
 export default function CostOfLiving() {
 
-  const getCostOfLiving = async (userProfileId: string): Promise<CostOfLiving> => {
-    return await colClient.getCostOfLiving(userProfileId)
-  }
-
   React.useEffect(() => {
-    console.log(getCostOfLiving('clmflch3r000008l53cixf8it'))
   })
   return (
     <div className="px-4 sm:px-6 lg:px-8">

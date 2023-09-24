@@ -1,5 +1,5 @@
 import { colTRPCRouter } from '@billian/col-service'
-import { createTRPCRouter } from "./trpc"
+import { createTRPCRouter } from "../../trpc/src/trpc"
 
 /**
  * primary router for starter app

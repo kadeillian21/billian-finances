@@ -19,6 +19,7 @@
     "@billian/env": "workspace:*",
     "@billian/eslint-config": "workspace:*",
     "@clerk/nextjs": "^4.23.4",
+    "fs": "0.0.1-security",
     "jsdom": "^22.1.0",
     "next": "13.4.19"
   }

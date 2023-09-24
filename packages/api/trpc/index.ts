@@ -1,7 +1,7 @@
 import { type inferRouterInputs, type inferRouterOutputs } from "@trpc/server"
-import { type AppRouter } from "./src/root"
+import { type AppRouter } from "../billian-api/src/root"
 
-export { appRouter, type AppRouter } from "./src/root"
+export { appRouter, type AppRouter } from "../billian-api/src/root"
 
 export { createTRPCContext } from "./src/trpc"
 export * from "./src/trpc"

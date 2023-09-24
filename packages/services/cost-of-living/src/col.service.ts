@@ -1,4 +1,4 @@
-import { billian_prisma, type CostOfLiving } from "../../../db/billian-prisma"
+import { billian_prisma, type CostOfLiving } from "billian-prisma"
 
 async function createCostOfLiving(userProfileId: string): Promise<CostOfLiving> {
   return await billian_prisma.costOfLiving.upsert({

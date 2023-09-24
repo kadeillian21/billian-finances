@@ -14,7 +14,8 @@
   "dependencies": {
     "@billian/col-service": "workspace:*",
     "@billian/user-profile-service": "workspace:*",
-    "@billian/trpc": "workspace:*",
+    "billian-prisma": "workspace:*",
+    "@billian/api": "workspace:*",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
@@ -26,7 +27,6 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "autoprefixer": "10.4.15",
-    "billian-prisma": "workspace:*",
     "dotenv": "^16.3.1",
     "eslint": "^8.48.0",
     "eslint-config-next": "13.4.19",

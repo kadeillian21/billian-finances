@@ -2,7 +2,7 @@ import { createTRPCProxyClient, httpBatchLink, loggerLink } from "@trpc/client"
 import { createTRPCNext } from "@trpc/next"
 import superjson from "superjson"
 import { getAPIUrl, isProduction } from '@billian/env'
-import { type AppRouter } from "@billian/trpc"
+import { type AppRouter } from "@billian/api"
 
 export const api = createTRPCProxyClient<AppRouter>({
   transformer: superjson,
