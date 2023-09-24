@@ -2,7 +2,9 @@ import { defineProject } from "vitest/config"
 
 export default defineProject({
   test: {
-    include: ["src/test/*.{spec,unit}.ts"],
+    include: [
+      "src/*.spec.ts"
+  ],
     environment: "jsdom",
     testTimeout: 2000000000,
     hookTimeout: 2000000000,

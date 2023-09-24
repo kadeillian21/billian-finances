@@ -1,7 +1,7 @@
 import { Instance, SnapshotOut, types } from 'mobx-state-tree'
 
 const ClerkAuthModel = types.model('ClerkAuth', {
-  userId: types.optional(types.string, ''),
+  userId: types.optional(types.string, 'hello papa dooo doo'),
   sessionId: types.optional(types.string, ''),
   token: types.optional(types.string, ''),
 })

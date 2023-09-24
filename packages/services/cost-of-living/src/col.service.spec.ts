@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { colService } from "../col.service"
+import { colService } from "./col.service"
 
 describe("it should test the CRUD actions of the COL service", () => {
   it("should create a cost of living for a user", async () => {
